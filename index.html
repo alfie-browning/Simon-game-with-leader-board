@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
-  <title>Simon</title>
+  <title>Simon Game</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
-
 <body>
-  <h1 id="level-title">Press A Key to Start</h1>
-  <div class="container">
-    <div lass="row">
-
-      <div type="button" id="green" class="btn green">
-
-      </div>
-
-      <div type="button" id="red" class="btn red">
-
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-      
-
-    </div>
-
+  <div class="area">
+    <ul class="circles">
+      <li></li><li></li><li></li><li></li><li></li>
+      <li></li><li></li><li></li><li></li><li></li>
+    </ul>
   </div>
-<div id="leaderboard">
-  <h2>Top 3 High Scores</h2>
-  <ul id="score-list">
-    <!-- Scores will be dynamically displayed here -->
-  </ul>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+  <div class="content">
+    <h1 id="level-title">Select a Difficulty to Begin</h1>
+    <h3 id="current-mode">Current Mode: None</h3>
 
+    <div id="difficulty-menu">
+      <h2>Select Difficulty</h2>
+      <button class="difficulty-btn" data-diff="easy">Easy</button>
+      <button class="difficulty-btn" data-diff="medium">Medium</button>
+      <button class="difficulty-btn" data-diff="hard">Hard</button>
+      <button class="difficulty-btn" data-diff="impossible">Impossible</button>
+      <button class="difficulty-btn" data-diff="endless">Endless</button>
+    </div>
 
-<script src="script.js"></script>
+    <div class="container">
+      <div class="row">
+        <div id="green" class="btn green"></div>
+        <div id="red" class="btn red"></div>
+      </div>
+      <div class="row">
+        <div id="yellow" class="btn yellow"></div>
+        <div id="blue" class="btn blue"></div>
+      </div>
+    </div>
+
+    <div id="leaderboard">
+      <h2>🏆 Endless Mode Leaderboard</h2>
+      <ul id="score-list"></ul>
+    </div>
+
+    <div id="achievements">
+      <h2>Achievements</h2>
+      <ul id="achievement-list"></ul>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

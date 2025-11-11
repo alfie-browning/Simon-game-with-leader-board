@@ -1,75 +1,349 @@
-body {
-  text-align: center;
-  background-color: #011F3F;
+/* ===============================
+   General Styling
+=============================== */
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
+body {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: none; 
+}
+
+
+html, body {
+  height: auto;
+  overflow-x: hidden;   
+  overflow-y: auto;  
+  justify-content: center;   
+}
+
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area {
+  position: fixed;         
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;         
+  z-index: -1;             
+  background: linear-gradient(to left, #8f94fb, #4e54c8);
+  overflow: hidden;
+}
+
+
+.circles {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+body > .content { 
+  padding-top: 40px;
+}
+
+
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+
+/* ===============================
+   Title and Layout
+=============================== */
 #level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  font-size: 2.5rem;
+  margin: 40px 0;
 }
 
 .container {
-  display: block;
-  width: 50%;
-  margin: auto;
-
-}
-
-.btn {
-  margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  width: auto;
+  margin: 20px auto;
+}
+
+/* ===============================
+   Simon Buttons
+=============================== */
+.btn {
+  margin: 15px;
+  display: inline-block;
+  height: 160px;
+  width: 160px;
   border: 10px solid black;
-  border-radius: 20%;
+  border-radius: 25%;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
+.btn:hover {
+  transform: scale(1.05);
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
+.red { background-color: #ff4c4c; }
+.green { background-color: #13ff7c; }
+.blue { background-color: #1c8cff; }
+.yellow { background-color: #f9ff4c; }
 
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
 
+.game-over {
+  background-color: #a80e0e;
+  opacity: 0.8;
+}
+
+/* ===============================
+   Difficulty Menu
+=============================== */
+#difficulty-menu {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#difficulty-menu h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.difficulty-btn {
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  margin: 5px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.difficulty-btn:hover {
+  background-color: #4d29d1;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   Leaderboard Section
+=============================== */
 #leaderboard {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
 }
 
 #leaderboard h2 {
-  font-family: 'Press Start 2P', cursive;
-  color: #FEF2BF;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffdf6b;
 }
 
 #score-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
-  color: #FEF2BF;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
+
 #score-list li {
   margin: 5px 0;
 }
+
+/* ===============================
+   Achievements Section
+=============================== */
+#achievements {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#achievements h2 {
+  font-size: 1.3rem;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+#achievement-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+#achievement-list li {
+  margin: 5px 0;
+}
+
+#achievement-list li strong {
+  color: #ffd700;
+}
+
+#current-mode {
+  font-family: 'Press Start 2P', cursive;
+  color: #4516ee;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   Responsive Layout
+=============================== */
+@media (max-width: 768px) {
+  .btn {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+  }
+
+  #level-title {
+    font-size: 1.5rem;
+  }
+
+  .difficulty-btn {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+}
+
